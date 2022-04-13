@@ -20,9 +20,7 @@ async function createConnection() {
 }
 const client = await createConnection();
 
-app.get("/",function(res,req){
-    res.send("hello");
-})
+
 
 //create mentor
 app.post("/creatementor", async function (req, res) {
@@ -73,5 +71,9 @@ app.get("/getstudent/:id", async function (req, res) {
     console.log(data)
     res.send(data);
 })
+
+app.get("/",function(req,res){
+    res.send("hello welcome to the app")
+});
 
 app.listen(PORT, () => console.log(`server started in port ${PORT}`));
