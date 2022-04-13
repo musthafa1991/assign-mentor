@@ -9,7 +9,8 @@ app.use(express.json());
 dotenv.config();
 
 const PORT = process.env.PORT;
-const Mongo_url = "mongodb://localhost:27017"
+// const Mongo_url = "mongodb://localhost:27017"
+const Mongo_url = process.env.MONGO_URL;
 
 async function createConnection() {
     const client = new MongoClient(Mongo_url)
